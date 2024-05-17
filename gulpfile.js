@@ -8,7 +8,7 @@ function styles(){
     .pipe(gulp.dest('./dist/css')); //enviar estes arquivos já comprimidos para a pasta de destino
 }
 function images(){
-    return gulp.src('./src/images/**/*') //recuperar as imagens e arquivos com imagens dentro dessas pastas
+    return gulp.src('./src/images/**/*', { encoding: false } ) //recuperar as imagens e arquivos com imagens dentro dessas pastas
     .pipe(imagemin()) //chamando a função de minificação
     .pipe(gulp.dest('./dist/images')); //enviar estes arquivos já comprimidos para a pasta de destino
 }

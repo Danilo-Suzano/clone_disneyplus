@@ -1,3 +1,4 @@
+@use 'var';
 @use 'hero';
 
 *{
@@ -6,22 +7,18 @@
     box-sizing: border-box;
 }
 
-$corDeFundo: #040714;
-$corTextoPrincipal: silver;
-$corTextoSecundadrio: #f9f9f9;
-
 body{
-    background-color: $corDeFundo;
+    background-color: var.$corDeFundo;
 }
 
 @mixin text($fontSize: 16px){
     font-size: $fontSize;
     line-height: $fontSize + 10px;
-    color: $corTextoPrincipal;
+    color: var.$corTextoPrincipal;
 }
 @mixin title($fontSize: 40px){
     @include text($fontSize);
-    color: $corTextoSecundadrio;
+    color: var.$corTextoSecundadrio;
 }
 
 .text--big{
@@ -36,7 +33,7 @@ body{
 
 .link-text{
     @include text(18px);
-    color: $corTextoSecundadrio;
+    color: var.$corTextoSecundadrio;
     text-decoration: underline;
 }
 
