@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function(){
     }
 
     for(let i = 0; i < questions.length; i++) {
-        questions[i].addEventListener('click', abreOuFechaResposta)
+        questions[i].addEventListener('click', abreOuFechaResposta) //criando evento de click quando clicar nas perguntas frequentes
     }
 })
 
@@ -22,7 +22,7 @@ function abreOuFechaResposta(elemento){ //para os abrir e fechar os elementos da
     const classe = 'faq__questions__item--is-open';
     const elementoPai = elemento.target.parentNode;
 
-    elementoPai.classList.toggle(classe)
+    elementoPai.classList.toggle(classe) //adciona a classe acima quando clicado na pergunta frequente
 }
 
 function removeActiveButton(){ //remove a classe active do button no shows quando outro botão for selecionado 
