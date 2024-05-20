@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', function(){
     const buttons = document.querySelectorAll('[data-tab-button]');
+    const questions = document.querySelectorAll('[data-faq-question]');
     
-    for(let i = 0; i < buttons.length; i++){
+    for(let i = 0; i < buttons.length; i++){ //mudar a aba selecionada
         buttons[i].addEventListener('click', function(button){ //adicionar um evento de click
             const tabTarget = button.target.dataset.tabButton;
             const tab = document.querySelector(`[data-tab-id=${tabTarget}]`);
@@ -11,7 +12,18 @@ document.addEventListener('DOMContentLoaded', function(){
             button.target.classList.add('shows__tabs__button--is-active');
         })
     }
+
+    for(let i = 0; i < questions.length; i++) {
+        questions[i].addEventListener('click', abreOuFechaResposta)
+    }
 })
+
+function abreOuFechaResposta(elemento){ //para os abrir e fechar os elementos das perguntas
+    const classe = 'faq__questions__item--is-open';
+    const elementoPai = elemento.target.parentNode;
+
+    elementoPai.classList.toggle(classe)
+}
 
 function removeActiveButton(){ //remove a classe active do button no shows quando outro botão for selecionado 
     const buttons = document.querySelectorAll('[data-tab-button]');
